@@ -68,19 +68,23 @@ GRPO 是一种面向奖励引导的微调算法（Guided Reinforcement Policy Op
 
 ```
 unsloth-grpo-gsm8k/
-├── README.md               # 当前说明文档
-├── requirements.txt        # 安装依赖列表
-├── .gitignore              # 忽略文件配置
+├── README.md                    # 当前说明文档
+├── requirements.txt             # 安装依赖列表
+├── .gitignore                   # 忽略文件配置
 ├── configs/
-│   └── training_config.yaml        # 训练参数配置
+│   └── training_config.yaml     # 训练参数配置
 ├── scripts/
-│   ├── train_grpo.py               # 执行 GRPO 微调
-│   ├── inference.py                # 推理单个样本
-│   ├── evaluate_gsm8k.py           # GSM8K 评估脚本
-│   └── convert_and_push.py         # 合并、量化并推送模型
-└── utils/
-    ├── data_utils.py               # 数据处理与提示构造
-    └── rewards.py                  # 各类奖励函数定义
+│   ├── train_grpo.py            # 执行 GRPO 微调
+│   ├── inference.py             # 推理单个样本
+│   ├── evaluate_gsm8k.py        # GSM8K 评估脚本
+│   └── convert_and_push.py      # 合并、量化并推送模型
+├── utils/
+│   ├── data_utils.py            # 数据处理与提示构造
+│   └── rewards.py               # 各类奖励函数定义
+└── outputs/
+    └── gemma-grpo/              # GRPO 微调后生成的 LoRA 适配器
+        ├── adapter_config.json          # LoRA 配置文件
+        └── adapter_model.safetensors   # 微调后的权重
 ```
 
 ---
@@ -143,5 +147,4 @@ Final accuracy: 88.00% (88/100)
 本项目基于 MIT License 开源，欢迎 Fork、改进和反馈。
 
 ---
-
 
